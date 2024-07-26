@@ -1,0 +1,197 @@
+/* Estilos básicos do corpo e cabeçalho */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+
+header {
+    background-color: #ffcb05;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative; /* Adicionado para garantir a interação com o campo de busca */
+    z-index: 10; /* Adicionado para garantir a visibilidade */
+}
+
+h1 {
+    margin: 0;
+    color: #2a75bb;
+    font-size: 2.5rem;
+}
+
+/* Estilos para o campo de busca */
+#search {
+    width: 80%;
+    padding: 15px;
+    margin-top: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10; /* Garantir que o campo de busca está acima de outros elementos */
+}
+
+/* Estilos principais para layout */
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    flex-wrap: wrap; /* Adicionado para suporte a dispositivos móveis */
+}
+
+/* Estilos para seções de detalhes e lista de Pokémon */
+#pokemon-details {
+    width: 60%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
+    position: relative; /* Adicionado para garantir a interação */
+    z-index: 5; /* Adicionado para garantir a visibilidade */
+}
+
+#pokemon-list {
+    width: 30%;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    padding: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative; /* Adicionado para garantir a interação */
+    z-index: 5; /* Adicionado para garantir a visibilidade */
+}
+
+/* Estilos para itens de Pokémon na lista */
+.pokemon-item {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s;
+}
+
+.pokemon-item:hover {
+    background-color: #e0e0e0;
+}
+
+.pokemon-item img {
+    width: 60px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+/* Estilos para detalhes de Pokémon */
+#pokemon-details img {
+    width: 200px;
+    height: 200px;
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+#pokemon-details h2 {
+    text-align: center;
+    color: #2a75bb;
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+#pokemon-details p {
+    font-size: 18px;
+    margin: 10px 20px;
+}
+
+#pokemon-details .stats {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+#pokemon-details .stat {
+    text-align: center;
+}
+
+#pokemon-details .stat span {
+    display: block;
+    font-weight: bold;
+}
+
+/* Estilos para botões de navegação */
+#nav-buttons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.nav-button {
+    background-color: #ffcb05;
+    border: 2px solid #2a75bb;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 28px;
+    color: #2a75bb;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-button:hover {
+    background-color: #2a75bb;
+    color: #fff;
+}
+
+/* Animações */
+#pokemon-info {
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.slide-in {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.slide-out {
+    transform: translateX(-100%);
+    opacity: 0;
+}
+
+.hidden {
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #pokemon-details, #pokemon-list {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    #nav-buttons {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .nav-button {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 24px;
+    }
+}
